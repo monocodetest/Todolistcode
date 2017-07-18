@@ -1,6 +1,8 @@
 <?php 
 //include database connection file
 require_once 'includefiles/config.php';
+
+//-------Select Query -----------------
 $sql = "SELECT * FROM users WHERE `UserName`='".$_POST['username']."' && PassWord='".md5($_POST['password']) ."'";
 	$row1=mysql_query($sql);
 	$body=mysql_fetch_array($row1);
@@ -8,8 +10,8 @@ $sql = "SELECT * FROM users WHERE `UserName`='".$_POST['username']."' && PassWor
 	$row=mysql_num_rows($row1);
 	
 
-$n=count($row);
-if ($n > 0)
+
+if ($row > 0)
 {    
     echo 'correct '.$uid;
 	
