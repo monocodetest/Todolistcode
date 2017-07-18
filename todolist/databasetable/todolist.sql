@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jul 17, 2017 at 07:24 PM
+-- Generation Time: Jul 18, 2017 at 12:47 PM
 -- Server version: 10.1.21-MariaDB
 -- PHP Version: 5.6.30
 
@@ -42,9 +42,10 @@ CREATE TABLE `tasklist` (
 --
 
 INSERT INTO `tasklist` (`id`, `UserId`, `TaskCode`, `TaskName`, `TaskDetail`, `TaskNote`, `Status`, `CreatedOn`) VALUES
-(1, 1, 'S001', 'test1', 'testing', 'hi', 0, '2017-07-17 16:38:35'),
-(2, 1, 'S002', 'test2', 'test', 'hello', 0, '2017-07-17 16:39:03'),
-(4, 2, 'S003', 'hello', 'hello..how r u', '', 0, '2017-07-17 16:39:35');
+(1, 1, 'S001', 'test1', 'testing', '', 0, '2017-07-18 07:45:58'),
+(2, 1, 'S002', 'test2', 'test', 'hello', 0, '2017-07-18 07:36:42'),
+(4, 2, 'S003', 'hello', 'hello..how r u', '', 0, '2017-07-17 16:39:35'),
+(5, 2, 'S005', 'test', 'hi', 'done', 0, '2017-07-18 10:43:26');
 
 -- --------------------------------------------------------
 
@@ -54,6 +55,7 @@ INSERT INTO `tasklist` (`id`, `UserId`, `TaskCode`, `TaskName`, `TaskDetail`, `T
 
 CREATE TABLE `users` (
   `User_Id` int(10) NOT NULL,
+  `Name` varchar(50) NOT NULL,
   `UserName` varchar(50) NOT NULL,
   `PassWord` varchar(50) NOT NULL,
   `CreatedOn` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
@@ -63,9 +65,9 @@ CREATE TABLE `users` (
 -- Dumping data for table `users`
 --
 
-INSERT INTO `users` (`User_Id`, `UserName`, `PassWord`, `CreatedOn`) VALUES
-(1, 'admin', '21232f297a57a5a743894a0e4a801fc3', '2017-07-14 09:21:33'),
-(2, 'pooja', '9cbb6aebcf5ae14a9248b4c08165212e', '2017-07-14 09:43:50');
+INSERT INTO `users` (`User_Id`, `Name`, `UserName`, `PassWord`, `CreatedOn`) VALUES
+(1, 'Admin', 'admin', '21232f297a57a5a743894a0e4a801fc3', '2017-07-18 10:44:37'),
+(2, 'pooja', 'pooja', '9cbb6aebcf5ae14a9248b4c08165212e', '2017-07-18 10:43:10');
 
 --
 -- Indexes for dumped tables
@@ -91,12 +93,12 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT for table `tasklist`
 --
 ALTER TABLE `tasklist`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 --
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `User_Id` int(10) NOT NULL AUTO_INCREMENT;
+  MODIFY `User_Id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
