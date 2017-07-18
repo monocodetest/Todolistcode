@@ -217,7 +217,7 @@ else
 						<div class="error-span"><span id="error_tDetail"></span></div>
 					</div>
 					<div class="form-lable">
-						<label>Add Comment *</label>
+						<label>Add Note </label>
 						<input type="text" class="with-border" name="tNote" id="tNote">
 						<div class="error-span"><span id="error_tNote"></span></div>
 					</div>
@@ -349,7 +349,7 @@ $(document).ready(function (e)
     $("#edit-form").on('submit',(function(e) 
 	{
 		//------------Validation-------------
-		var taskComment = $('#tNote').val();
+		/*var taskComment = $('#tNote').val();
 		if(taskComment == '')
 		{
 			$('#error_tNote').html("Add Your Note");
@@ -361,7 +361,7 @@ $(document).ready(function (e)
 			$('#error_tNote').html("");
 		}
  
-	
+	*/
 		//------------Validation End-------------
 		e.preventDefault();
         $.ajax({
