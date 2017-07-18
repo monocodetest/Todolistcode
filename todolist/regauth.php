@@ -4,7 +4,7 @@ require_once 'includefiles/config.php';
 
 
 //------------Insert Query for New User--------------
- $sql = "INSERT into users (UserName,PassWord) Value('".$_POST['username']."','".md5($_POST['password'])."')";
+$sql = "INSERT into users (Name,UserName,PassWord) Value('".$_POST['name']."','".$_POST['username']."','".md5($_POST['password'])."')";
 	$row=mysql_query($sql);
 	
 	  	if($row){

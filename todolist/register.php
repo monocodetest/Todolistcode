@@ -24,25 +24,28 @@
                </div>
                <div class="panel-body" >
                   <form name="reg" ng-submit="postCtrl.postForm()" class="form-horizontal" method="POST">
-                     <div class="input-group">
-                        <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i>Username</span>
-                        <input type="text" id="inputUsername" class="form-control" required autofocus ng-model="postCtrl.inputData.username"/>
-                     </div>
-					 
-					 
-                     <div class="input-group">
-                        <span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i>Password</span>
-                        <input type="password" id="inputPassword" class="form-control" required ng-model="postCtrl.inputData.password"/>
-                     </div>
+						
+						<div class="input-group" style="margin-bottom: 10px;margin-top: 10px;">
+							<span class="input-group-addon"><i class="glyphicon glyphicon-user"></i>Name</span>
+							<input type="text" id="inputName" class="form-control" required autofocus ng-model="postCtrl.inputData.name"/>
+						</div>
+						<div class="input-group" style="margin-bottom: 10px;">
+							<span class="input-group-addon"><i class="glyphicon glyphicon-user"></i>Username</span>
+							<input type="text" id="inputUsername" class="form-control" required autofocus ng-model="postCtrl.inputData.username"/>
+						</div>
+					    <div class="input-group" style="margin-bottom: 10px;">
+							<span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i>Password</span>
+							<input type="password" id="inputPassword" class="form-control" required ng-model="postCtrl.inputData.password"/>
+						</div>
                   
-                     <div class="form-group">
-                        <div class="col-sm-12 controls">
-                           <button type="submit" class="btn btn-primary pull-right" ng-disabled="reg.$invalid">
-                           <i class="glyphicon glyphicon-log-in"></i> Register</button>
-						    <a href="index.php"><button type="button"  class="btn btn-warning btn-sm" >Cancel</button></a>
-                         
-                        </div>
-                     </div>
+						<div class="form-group">
+							<div class="col-sm-12 controls">
+							   <button type="submit" class="btn btn-primary pull-right" ng-disabled="reg.$invalid">
+							   <i class="glyphicon glyphicon-log-in"></i> Register</button>
+								<a href="index.php"><button type="button"  class="btn btn-warning btn-sm" >Cancel</button></a>
+							 
+							</div>
+						</div>
                   </form>
                </div>
             </div>
@@ -54,7 +57,9 @@
 	 angular.module('postReg', [])
     .controller('PostController', ['$scope', '$http', function($scope, $http) {        
             this.postForm = function() {
-                var encodedString = 'username=' +
+                var encodedString = 'name=' +
+                    encodeURIComponent(this.inputData.name) +
+					'&username=' +
                     encodeURIComponent(this.inputData.username) +
                     '&password=' +
                     encodeURIComponent(this.inputData.password);

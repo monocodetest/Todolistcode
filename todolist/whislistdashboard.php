@@ -7,6 +7,7 @@ $getuserid=$_GET['id'];
 $sql1= mysql_query("select * from users where User_Id='$getuserid'");
 $num1=mysql_fetch_array($sql1);
 $uId=$num1['User_Id'];
+$uname=$num1['Name'];
 $username=$num1['UserName'];
 $_SESSION['UserName']=$username;
 if(isset($_SESSION['UserName']) & !empty($_SESSION['UserName']))
@@ -48,7 +49,7 @@ else
 	<ul class="nav navbar-nav navbar-right">
 	  <li class="">
 		<a href="javascript:;" class="user-profile dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
-		  <img src="images/img.jpg" alt=""><?php echo $_SESSION['UserName']; ?>
+		  <img src="images/img.jpg" alt=""><?php echo $uname; ?>
 		  <span class=" fa fa-angle-down"></span>
 		</a>
 		<ul class="dropdown-menu dropdown-usermenu animated fadeInDown pull-right">
